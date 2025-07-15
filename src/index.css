@@ -5,9 +5,143 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: whitesmoke;
 }
+.title {
+  height: 5vh;
+  /*background-color: green;*/
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.games {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  gap: 2vh
+}
+.board {
+  width: 25vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 2vh;
+}
+.gamesTop {
+  width: 25vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: white;
+  border: 2px solid #EEEEF0;
+  box-shadow: 2px 2px 2px #CCCCCC;
+}
+.gamesBottom {
+  width: 25vw;
+  height: 53vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: white;
+  border: 2px solid #EEEEF0;
+  box-shadow: 2px 2px 2px #CCCCCC;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+}
+.dices {
+  width: 25vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw
+}
+.dice {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all;
+  font-size: 30px;
+}
+.notLock {
+  background-color: white;
+  border: 2px solid #DDDDDD;
+  color: #333333;
+}
+.yeahLock {
+  background-color: #FFAAAA;
+  border: 2px solid red;
+  color: red;
+}
+.chanceNpoint {
+  color: #5270FF;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.points {
+  width: 22vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pointList {
+  width: 22vw;
+  height: 50vh;
+  overflow-y: scroll;
+  /*background-color: greenyellow;*/
+}
+.cat {
+  width: 20vw;
+  height: 10vh;
+  border: 2px solid black;
+  transition: all;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.yeahCat {
+  background-color: #A7B5FF;
+  border: 2px solid #5270FF;
+  cursor: not-allowed;
+}
+.notCat {
+  background-color: whitesmoke;
+  border: 2px solid #DDDDDD;
+}
+.catTitle {
+  font-weight: bold;
+
+}
+.another {
+  width: 65vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: white;
+  border: 2px solid #EEEEF0;
+  box-shadow: 2px 2px 2px #CCCCCC;
 }
