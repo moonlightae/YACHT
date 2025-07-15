@@ -107,6 +107,7 @@ const YachtGame: React.FC = () => {
       setRerollCount(prev => prev - 1);
     }
     // setM(dice);
+    console.log(usedCategories['one'])
   };
   const toggleDiceLock = (index: number): void => {
     if (notStart) return;
@@ -174,6 +175,14 @@ const YachtGame: React.FC = () => {
     setDice([1, 2, 3, 4, 5].map(() => generateRandomDice()));
     setDiceLocked([false, false, false, false, false]);
     setDiceDisplay(["notLock", "notLock", "notLock", "notLock", "notLock" ]);
+    if ((usedCategories['one'] === undefined ? 0 : usedCategories['one'])+
+    (usedCategories['two'] === undefined ? 0 : usedCategories['two'])+
+    (usedCategories['thr'] === undefined ? 0 : usedCategories['thr'])+
+    (usedCategories['fou'] === undefined ? 0 : usedCategories['fou'])+
+    (usedCategories['fiv'] === undefined ? 0 : usedCategories['fiv'])+
+    (usedCategories['six'] === undefined ? 0 : usedCategories['six']) >= 63) {
+      setTotalScore(prev => prev + 50);
+    }
   };
 
   const getDiceSymbol = (value: DiceValue): string => {
@@ -191,7 +200,7 @@ const YachtGame: React.FC = () => {
     <div>
       <div className="main">
         <h1 className="title">
-          🎲 Yacht Game 🎲 {message}
+          🎲 Yacht Game 🎲
         </h1>
 
         <div className="games">
@@ -238,11 +247,11 @@ const YachtGame: React.FC = () => {
                         </div>
                         <div style={{margin: '1vw'}}>
                           {isUsed ? (
-                            <p className="text-lg font-bold text-blue-600">
+                            <p>
                               {usedCategories[category.key]}점
                             </p>
                           ) : (
-                            <p className="text-lg font-bold text-green-600">
+                            <p>
                               {currentScore}점
                             </p>
                           )}
@@ -315,17 +324,38 @@ const YachtGame: React.FC = () => {
             {message === 5 && (
               <div>
                 <h2>
-                  🎉 Long Straight! 🎉
+                  🎉 Large Straight! 🎉
                 </h2>
               </div>
             )}
             {message === 6 && (
               <div>
                 <h2>
-                  🎉 Short Straight! 🎉
+                  🎉 Small Straight! 🎉
                 </h2>
               </div>
             )}
+            <div className="bonus">
+              <h1>
+                BONUS
+              </h1>
+              <p>
+                Ones, Twos, Threes, Fours, Fives, Sixes의 합이 63을 넘으면
+                <br/>보너스 점수 50점이 부여됩니다!
+              </p>
+              <div>
+                <p style={{fontWeight: 'bold'}}>
+                  현재: {
+                    (usedCategories['one'] === undefined ? 0 : usedCategories['one'])+
+                    (usedCategories['two'] === undefined ? 0 : usedCategories['two'])+
+                    (usedCategories['thr'] === undefined ? 0 : usedCategories['thr'])+
+                    (usedCategories['fou'] === undefined ? 0 : usedCategories['fou'])+
+                    (usedCategories['fiv'] === undefined ? 0 : usedCategories['fiv'])+
+                    (usedCategories['six'] === undefined ? 0 : usedCategories['six'])
+                }
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
